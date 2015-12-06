@@ -1,0 +1,11 @@
+<nav>
+  <p>
+    <% if current_user %>
+      <h2> Hi, <%= link_to current_user.name, current_user %></h2>
+      <%= link_to 'Sign Out', session_path, method: :delete, class: 'button' %>
+    <% else %>
+      <%= link_to 'Sign Up', signup_path, class: 'button' %>
+      <%= link_to 'Sign In', new_session_path, class: 'button' %>
+    <% end %>
+  </p>
+</nav>
