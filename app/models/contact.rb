@@ -14,5 +14,5 @@ class Contact
   validates :phone, length: { maximum: 12}
   validates :phone,  format: {with: /\d{3}-\d{3}-\d{4}/}
 
-  referenced_in :user
+  belongs_to :user
 end

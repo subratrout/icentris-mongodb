@@ -15,7 +15,7 @@ class User
   validates :email, format: {with: /\A\S+@\S+\z/}
   validates :password_digest, presence: true
 
-  references_many :contacts
+  has_many :contacts
   def self.authenticate(email, password)
     user = User.find_by(email: email)
     user && user.authenticate(password)

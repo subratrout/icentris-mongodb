@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :contacts
-  resources :users
+  resources :users do
+    resources :contacts
+  end
 
   root "users#index"
   get 'signup' => 'users#new'

@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
+<article id="contact">
+  <header>
+    <p>
+      <%= @contact.name %>
+    </p>
+    <p>
+      <%= @contact.email %>
+    </p>
+    <p>
+      <%= @contact.phone %>
+    </p>
+    <p>
+      <%= @contact.address %>
+    </p>
+  </header>
+</article>
 
-<p>
-  <strong>Name:</strong>
-  <%= @contact.name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @contact.email %>
-</p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @contact.phone %>
-</p>
+<%= link_to "Edit Contact", edit_user_contact_path(@user, @contact.id),
+                         class: 'button ok contact' %>
 
-<p>
-  <strong>Address:</strong>
-  <%= @contact.address %>
-</p>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%= link_to 'Delete Contact', user_contact_path(@user, @contact.id), class: 'button', method: :delete, data: { confirm: 'Are you sure?' } %>
